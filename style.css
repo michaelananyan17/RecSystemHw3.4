@@ -1,104 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-header {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    color: white;
-    padding: 40px 30px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    font-weight: 300;
-}
-
-header p {
-    font-size: 1.1em;
-    opacity: 0.9;
-}
-
-main {
-    padding: 40px 30px;
-}
-
-.controls {
-    display: grid;
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-label {
-    font-weight: 600;
-    color: #2c3e50;
-    font-size: 1em;
-}
-
-select {
-    padding: 12px 15px;
-    border: 2px solid #e1e8ed;
-    border-radius: 8px;
-    font-size: 1em;
-    background: white;
-    transition: all 0.3s ease;
-}
-
-select:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
-}
-
-#predict-btn {
-    padding: 15px 30px;
-    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#predict-btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
-}
-
-#predict-btn:disabled {
-    background: #bdc3c7;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.result-area {
+.file-upload {
     background: #f8f9fa;
     border-radius: 10px;
     padding: 25px;
@@ -106,63 +6,33 @@ select:focus {
     margin-bottom: 30px;
 }
 
-.result-area p {
-    font-size: 1.1em;
+.file-upload h3 {
+    margin-bottom: 20px;
     color: #2c3e50;
-    line-height: 1.6;
 }
 
-.training-status {
-    background: #fff3cd;
-    border: 1px solid #ffeaa7;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.status-message {
-    font-weight: 600;
-    color: #856404;
-    margin-bottom: 15px;
-}
-
-.progress-bar {
+input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #bdc3c7;
+    border-radius: 8px;
+    background: white;
     width: 100%;
-    height: 8px;
-    background: #e9ecef;
-    border-radius: 4px;
-    overflow: hidden;
 }
 
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #3498db, #2ecc71);
-    width: 0%;
-    transition: width 0.3s ease;
-}
-
-footer {
-    background: #f8f9fa;
-    padding: 20px;
-    text-align: center;
-    color: #6c757d;
-    border-top: 1px solid #e9ecef;
-}
-
-footer p {
-    font-size: 0.9em;
-}
-
-.rating-display {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #e74c3c;
-    text-align: center;
+#load-files-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
     margin-top: 10px;
 }
 
-.stars {
-    color: #f39c12;
-    font-size: 1.5em;
-    text-align: center;
-    margin-top: 5px;
+#load-files-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
 }
