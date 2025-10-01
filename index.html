@@ -14,18 +14,31 @@
         </header>
 
         <main>
-            <div class="controls">
+            <div class="file-upload">
+                <h3>Load Your MovieLens Data Files</h3>
+                <div class="form-group">
+                    <label for="movies-file">Movies File (u.item):</label>
+                    <input type="file" id="movies-file" accept=".item,.txt">
+                </div>
+                <div class="form-group">
+                    <label for="ratings-file">Ratings File (u.data):</label>
+                    <input type="file" id="ratings-file" accept=".data,.txt">
+                </div>
+                <button id="load-files-btn" onclick="loadFiles()">Load Files</button>
+            </div>
+
+            <div class="controls" style="display: none;">
                 <div class="form-group">
                     <label for="user-select">Select User:</label>
                     <select id="user-select">
-                        <option value="">Loading users...</option>
+                        <option value="">Select a user...</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="movie-select">Select Movie:</label>
                     <select id="movie-select">
-                        <option value="">Loading movies...</option>
+                        <option value="">Select a movie...</option>
                     </select>
                 </div>
 
@@ -35,10 +48,10 @@
             </div>
 
             <div id="result" class="result-area">
-                <p>Loading data and training model...</p>
+                <p>Please load your MovieLens data files to begin.</p>
             </div>
 
-            <div id="training-status" class="training-status">
+            <div id="training-status" class="training-status" style="display: none;">
                 <div class="status-message">Initializing...</div>
                 <div class="progress-bar">
                     <div class="progress-fill"></div>
