@@ -174,8 +174,10 @@ async function trainModel() {
                 callbacks: {
                     onEpochEnd: (epoch, logs) => {
                         const progress = 75 + Math.floor((epoch + 1) / 8 * 20);
-                        updateStatus(`Training epoch ${epoch + 1}/8 - Loss: ${logs.loss.toFixed(4)}`, progress);
-                        console.log(`Epoch ${epoch + 1}, Loss: ${logs.loss}`);
+                        // FIXED: Added null check for logs before accessing loss
+                        const lossValue = logs && logs.loss ? logs.loss.toFixed(4) : 'N/A';
+                        updateStatus(`Training epoch ${epoch + 1}/8 - Loss: ${lossValue}`, progress);
+                        console.log(`Epoch ${epoch + 1}, Loss: ${lossValue}`);
                     }
                 }
             }
